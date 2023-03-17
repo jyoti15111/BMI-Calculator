@@ -26,7 +26,7 @@
   --c-brown: #795548;
   --c-blue-grey: #607d8b;
 
-  --c-informacion: #e1f5fe;
+  --c-informacion: #cbe9f4;
 
   --shadow-1: 0 1px 2px 0 rgb(0 0 0 / 10%);
   --border: 1px solid #eaeaea;
@@ -34,7 +34,7 @@
   --c-btn-ligth: #f3f3f3;
 
   --transition-3s: all 0.3s ease;
-  --font-primario: 'Roboto', sans-serif;
+  --font-primario: 'Open Sans';
 }
 html {
   scroll-behavior: smooth;
@@ -138,9 +138,9 @@ img {
   width: 100%;
 }
 .btn-pink {
-  background-image: linear-gradient(101deg, #ffc107, #ffc107);
+  background-image: linear-gradient(101deg, #000000, #000000);
   color: #fff;
-  border: 1px solid #ffc107;
+  border: 1px solid #000000;
 }
 .btn-azul {
   background-image: linear-gradient(117deg, #03a9f4, #0288d1);
@@ -170,7 +170,7 @@ img {
   pointer-events: none;
 }
 .btn-pink::after {
-  background-image: linear-gradient(101deg, #ffc107, #ffc107);
+  background-image: linear-gradient(101deg, #000000, #000000);
 }
 .btn-azul::after {
   background-image: linear-gradient(117deg, #0288d1, #03a9f4);

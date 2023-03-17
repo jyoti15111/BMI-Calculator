@@ -25,10 +25,10 @@
   max-width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 .resultado__linear {
-  padding-top: 120px;
+  padding-top: 75px;
   position: relative;
   display: flex;
   text-align: center;
@@ -41,7 +41,7 @@
   width: 150px;
   height: fit-content;
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
   border-radius: 10px;
   color: #fff;
   background: var(--c-amarillo);
@@ -173,7 +173,7 @@
   row-gap: 20px;
   background-color: var(--c-informacion);
   border-radius: 12px;
-  padding: 20px;
+  padding: 10px;
 }
 .resultado__informacion div {
   flex: auto;

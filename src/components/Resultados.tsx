@@ -44,12 +44,12 @@ const Resultados = ({
   return (
     <section className='resultado'>
       <div className='container'>
-        <h2 className='titulo'>{titulo}</h2>
+        
 
         <section className='resultado__grafico'>
           <div className='resultado__linear'>
             <section className={`resultado__indice ${tipo === 'imc' ? clase : 'normal'}`}>
-              <h2>{tipo === 'imc' ? 'YOUR BMI' : 'Peso ideal'}</h2>
+              <h4>{tipo === 'imc' ? 'YOUR BMI' : 'Peso ideal'}</h4>
               <p>
                 {tipo === 'imc'
                   ? imc
@@ -59,7 +59,7 @@ const Resultados = ({
             </section>
 
             <div>
-              <h3>under weight</h3>
+              <h4>under weight</h4>
               <p className='one'>
                 <span>0.0 </span> <span className='resultado__dotted'></span>
               </p>
@@ -68,8 +68,8 @@ const Resultados = ({
               </span>
             </div>
             <div>
-              <h3>normal weight
-</h3>
+              <h4>normal weight
+</h4>
               <p>
                 <span>19.0</span>
                 <span className='resultado__dotted'></span>
@@ -79,7 +79,7 @@ const Resultados = ({
               </span>
             </div>
             <div>
-              <h3>overweight</h3>
+              <h4>overweight</h4>
               <p>
                 <span>24.0</span>
                 <span className='resultado__dotted'></span>
@@ -89,7 +89,7 @@ const Resultados = ({
               </span>
             </div>
             <div>
-              <h3>obesity</h3>
+              <h4>obesity</h4>
               <p>
                 <span>29.0</span>
                 <span className='resultado__dotted'></span>
@@ -99,7 +99,7 @@ const Resultados = ({
               </span>
             </div>
             <div>
-              <h3>extreme obesity</h3>
+              <h4>extreme obesity</h4>
               <p>
                 <span>39.0</span>
                 <span className='resultado__dotted'></span>
@@ -112,14 +112,14 @@ const Resultados = ({
         <section className='resultado__informacion'>
           {tipo === 'imc' && (
             <div>
-              <h2>Your personal BMI</h2>
+              <h4>Your personal BMI</h4>
               <p>{imc} BMI</p>
             </div>
           )}
 
           {tipo === 'imc' && (
             <div>
-              <h2>Your ideal BMI</h2>
+              <h4>Your ideal BMI</h4>
               {/* <p>
                 {pesoActual} {tipoPeso}
               </p> */}
@@ -130,7 +130,7 @@ const Resultados = ({
           )}
 
           <div>
-            <h2>Your ideal weight range</h2>
+            <h4>Your ideal weight range</h4>
             <p>
               {rangPesoIdeal[0]} {tipoPeso} - {rangPesoIdeal[1]} {tipoPeso}
             </p>
