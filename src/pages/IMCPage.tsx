@@ -317,7 +317,7 @@ const IMCPage = (): JSX.Element => {
       {resultado.imc !== 0 && (
         <Resultados
           tipo='imc'
-          titulo='your personal result'
+          titulo='Your Personal Result'
           tipoPeso={tipoPeso}
           imc={resultado.imc}
           pesoActual={resultado.pesoActual}
