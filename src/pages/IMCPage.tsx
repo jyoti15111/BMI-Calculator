@@ -28,8 +28,9 @@ export interface StateProps {
     imc: number
     pesoIdeal: [number, number]
     pesoActual: number
-    rangoobesity: number
-    rangooverweight: number
+    rangoObesidad: number
+    rangoSobrePeso: number
+
   }
 }
 
@@ -57,8 +58,9 @@ const DEFAULT_STATE: StateProps = {
     imc: 0,
     pesoIdeal: [0, 0],
     pesoActual: 0,
-    rangoobesity: 0,
-    rangooverweight: 0
+    rangoObesidad: 0,
+    rangoSobrePeso: 0,
+    
   }
 }
 
@@ -163,24 +165,21 @@ const IMCPage = (): JSX.Element => {
       if (!prev.altura && !prev.genero && !prev.peso ) {
         try {
           setError(null);
-          console.log(campos.feet);
-          console.log(genero);
-          console.log(tipoAltura);
-          console.log(tipoPeso);
-          const { imc, peso, rango, rangooverweight, rangoobesity } = calcularIMC({
+         
+          const { imc, peso, rango, rangoSobrePeso, rangoObesidad } = calcularIMC({
             genero,
             altura: campos.altura,
             tipoAltura,
             peso: campos.peso,
             tipoPeso,
-            year: campos.year,
+            
             feet: campos.feet,
           })
 
           const scrollDiv = divGrid.current?.clientHeight ?? 100
           window.scrollTo(0, scrollDiv)
 
-          setResultado({ imc, pesoIdeal: rango, pesoActual: peso, rangooverweight, rangoobesity })
+          setResultado({ imc, pesoIdeal: rango, pesoActual: peso, rangoSobrePeso, rangoObesidad })
         } catch (error) {
           console.log(error)
           setError('error')
@@ -323,8 +322,8 @@ const IMCPage = (): JSX.Element => {
           imc={resultado.imc}
           pesoActual={resultado.pesoActual}
           rangPesoIdeal={resultado.pesoIdeal}
-          rangooverweight={resultado.rangooverweight}
-          rangoobesity={resultado.rangoobesity}
+          rangoSobrePeso={resultado.rangoSobrePeso}
+          rangoObesidad={resultado.rangoObesidad}
         />
       )}
     </>

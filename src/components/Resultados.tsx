@@ -8,8 +8,8 @@ interface ResultadosProps {
   rangPesoIdeal: [number, number]
   pesoActual?: number
   tipoPeso: PesosType
-  rangooverweight: number
-  rangoobesity: number
+  rangoSobrePeso: number
+  rangoObesidad: number
   tipo: 'pesoIdeal' | 'imc'
 }
 
@@ -19,8 +19,8 @@ const Resultados = ({
   imc,
   pesoActual,
   rangPesoIdeal,
-  rangooverweight,
-  rangoobesity,
+  rangoSobrePeso,
+  rangoObesidad,
   tipo
 }: ResultadosProps): JSX.Element => {
   const [clase, setClase] = useState('')
@@ -39,7 +39,7 @@ const Resultados = ({
         setClase('obesity-morbida')
       }
     }
-  }, [imc, rangooverweight, rangoobesity])
+  }, [imc, rangoSobrePeso, rangoObesidad])
 
   return (
     <section className='resultado'>
@@ -85,7 +85,7 @@ const Resultados = ({
                 <span className='resultado__dotted'></span>
               </p>
               <span className='resultado-bottom'>
-                {rangooverweight} {tipoPeso}
+                {rangoSobrePeso} {tipoPeso}
               </span>
             </div>
             <div>
@@ -95,7 +95,7 @@ const Resultados = ({
                 <span className='resultado__dotted'></span>
               </p>
               <span className='resultado-bottom'>
-                {rangoobesity} {tipoPeso}
+                {rangoObesidad} {tipoPeso}
               </span>
             </div>
             <div>

@@ -21,8 +21,8 @@ export interface StateProps {
   genero: GeneroType
   resultado: {
     pesoIdeal: [number, number]
-    rangoobesity: number
-    rangooverweight: number
+    rangoObesidad: number
+    rangoSobrePeso: number
   }
 }
 
@@ -37,14 +37,14 @@ const DEFAULT_STATE: StateProps = {
     altura: false
   },
   error: null,
-  tipoAltura: 'cm',
+  tipoAltura: 'ft',
 
   genero: 'hombre',
 
   resultado: {
     pesoIdeal: [0, 0],
-    rangoobesity: 0,
-    rangooverweight: 0
+    rangoObesidad: 0,
+    rangoSobrePeso: 0
   }
 }
 
@@ -76,7 +76,7 @@ const PesoIdealPage = (): JSX.Element => {
       if (Number(value) > new Date().getFullYear()) return
       setCampos({ ...campos, [name]: Number(value) })
     } else if (name === 'altura') {
-      if (tipoAltura === 'cm') {
+      if (tipoAltura === 'ft') {
         if (value.length > 3) return
         if (Number(value) > 599) return
       } else {
@@ -90,7 +90,7 @@ const PesoIdealPage = (): JSX.Element => {
   // Handle change buttons
   const handleButton = (e: MouseEvent<HTMLButtonElement>): void => {
     const { name } = e.currentTarget
-    if (name === 'cm' || name === 'metro') {
+    if (name === 'ft' || name === 'metro') {
       setTipoAltura(name)
     }
     if (name === 'hombre' || name === 'mujer') {
@@ -125,15 +125,16 @@ const PesoIdealPage = (): JSX.Element => {
       if (!prev.altura && !prev.genero && !prev.year) {
         try {
           setError(null)
-          const { rango, rangooverweight, rangoobesity } = calcularPesoIdeal({
+          const { rango, rangoSobrePeso, rangoObesidad } = calcularPesoIdeal({
             genero,
-            year: campos.year,
+            feet: campos.year,
             altura: campos.altura,
             tipoAltura
           })
           const scrollDiv = divGrid.current?.clientHeight ?? 100
           window.scrollTo(0, scrollDiv)
-          setResultado({ pesoIdeal: rango, rangooverweight, rangoobesity })
+          setResultado({ pesoIdeal: rango, rangoSobrePeso, rangoObesidad })
+          // setResultado({ pesoIdeal: rango,  rangoObesidad })
         } catch (error) {
           console.log(error)
           setError('error')
@@ -148,7 +149,7 @@ const PesoIdealPage = (): JSX.Element => {
       <section className='paddding-20 container' ref={divGrid}>
         <h1 className='titulo'>Calcular peso ideal</h1>
         <p className='subTitulo'>
-          For a correct calculation we need some basic information about you
+          Para un cálculo correcto necesitamos algo de información básica sobre ti
         </p>
 
         <section className='cards-grid-3'>
@@ -179,7 +180,7 @@ const PesoIdealPage = (): JSX.Element => {
             </label>
           </Card>
 
-          <Card indice={3} title='How tall are you?' error={errores.altura}>
+          <Card indice={3} title='¿Cuánto mides?' error={errores.altura}>
             <label htmlFor='altura'>
               <input
                 type='number'
@@ -187,15 +188,15 @@ const PesoIdealPage = (): JSX.Element => {
                 value={campos.altura > 0 ? campos.altura : ''}
                 onChange={handleChange}
                 id='altura'
-                placeholder={tipoAltura === 'cm' ? '170' : '1.70'}
+                placeholder={tipoAltura === 'ft' ? '170' : '1.70'}
               />
-              <span>{tipoAltura === 'cm' ? 'cm' : 'm'}</span>
+              <span>{tipoAltura === 'ft' ? 'cm' : 'm'}</span>
             </label>
             <div className='botones'>
               <button
                 name='cm'
                 onClick={handleButton}
-                className={`${tipoAltura === 'cm' ? 'btn-azul' : 'btn-ligth'}`}
+                className={`${tipoAltura === 'ft' ? 'btn-azul' : 'btn-ligth'}`}
               >
                 cm
               </button>
@@ -226,14 +227,14 @@ const PesoIdealPage = (): JSX.Element => {
         )}
       </section>
 
-      {resultado.rangooverweight !== 0 && (
+      {resultado.rangoSobrePeso !== 0 && (
         <Resultados
           tipo='pesoIdeal'
-          titulo='your personal result'
+          titulo='Tu resultado personal'
           tipoPeso='kg'
           rangPesoIdeal={resultado.pesoIdeal}
-          rangooverweight={resultado.rangooverweight}
-          rangoobesity={resultado.rangoobesity}
+          rangoSobrePeso={resultado.rangoSobrePeso}
+          rangoObesidad={resultado.rangoObesidad}
         />
       )}
     </>

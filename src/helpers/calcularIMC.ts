@@ -7,7 +7,7 @@ interface calcularIMCProps {
   tipoAltura: AlturasType
   peso: number
   altura: number
-  year: number
+
   feet: number
 }
 
@@ -15,8 +15,8 @@ type calcularIMCReturn = {
   imc: number
   peso: number
   rango: [number, number]
-  rangoobesity: number
-  rangooverweight: number
+  rangoObesidad: number
+ rangoSobrePeso:number
 }
 
 const calcularIMC = ({
@@ -25,7 +25,7 @@ const calcularIMC = ({
   altura,
   tipoAltura,
   tipoPeso,
-  year,
+
   feet
 }: calcularIMCProps): calcularIMCReturn => {
   //  console.log(tipoPeso);
@@ -44,6 +44,7 @@ var imc = weight/(height*height);
    console.log(imc);
    var lower = (18.5 * (height*height))/0.453592;
    var upper = (24.9 * (height*height))/0.453592;
+   var test =  (29.0 * (height*height))/0.453592;
    console.log(lower);
    console.log(upper);
 //    BMI = 703 × 	
@@ -62,10 +63,13 @@ var imc = weight/(height*height);
   // const imc = pesoKg / (alturaM * alturaM) // Calcular IMC
 // console.log(imc);
   const rangoPesoIdeal: [number, number] = [0, 0]
-  let rangooverweight: number = 0
-  let rangoobesity: number = 0
+  let rangoSobrePeso: number = 0
+
+  let rangoObesidad: number = 0
+  // let rangoObesidad: number = 0
   rangoPesoIdeal[0] = twoDecimales(lower);
   rangoPesoIdeal[1] =twoDecimales(upper);
+  rangoSobrePeso = twoDecimales(test);
   /*
     IMC Rango de peso
     0,0 - 19,0 = under weight
@@ -91,7 +95,7 @@ var imc = weight/(height*height);
   //       tipoPeso === 'lb'
   //         ? twoDecimales((29.0 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(29.0 * (alturaM * alturaM))
-  //     rangoobesity =
+  //     rangoObesidad =
   //       tipoPeso === 'lb'
   //         ? twoDecimales((38.9 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(38.9 * (alturaM * alturaM))
@@ -108,7 +112,7 @@ var imc = weight/(height*height);
   //       tipoPeso === 'lb'
   //         ? twoDecimales((28.0 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(28.0 * (alturaM * alturaM))
-  //     rangoobesity =
+  //     rangoObesidad =
   //       tipoPeso === 'lb'
   //         ? twoDecimales((37.9 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(37.9 * (alturaM * alturaM))
@@ -127,7 +131,7 @@ var imc = weight/(height*height);
   //       tipoPeso === 'lb'
   //         ? twoDecimales((29.0 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(29.0 * (alturaM * alturaM))
-  //     rangoobesity =
+  //     rangoObesidad =
   //       tipoPeso === 'lb'
   //         ? twoDecimales((38.9 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(38.9 * (alturaM * alturaM))
@@ -144,7 +148,7 @@ var imc = weight/(height*height);
   //       tipoPeso === 'lb'
   //         ? twoDecimales((28.0 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(28.0 * (alturaM * alturaM))
-  //     rangoobesity =
+  //     rangoObesidad =
   //       tipoPeso === 'lb'
   //         ? twoDecimales((37.9 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(37.9 * (alturaM * alturaM))
@@ -163,7 +167,7 @@ var imc = weight/(height*height);
   //       tipoPeso === 'lb'
   //         ? twoDecimales((30.0 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(30.0 * (alturaM * alturaM))
-  //     rangoobesity =
+  //     rangoObesidad =
   //       tipoPeso === 'lb'
   //         ? twoDecimales((39.9 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(39.9 * (alturaM * alturaM))
@@ -180,7 +184,7 @@ var imc = weight/(height*height);
   //       tipoPeso === 'lb'
   //         ? twoDecimales((29.0 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(29.0 * (alturaM * alturaM))
-  //     rangoobesity =
+  //     rangoObesidad =
   //       tipoPeso === 'lb'
   //         ? twoDecimales((38.9 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(38.9 * (alturaM * alturaM))
@@ -199,7 +203,7 @@ var imc = weight/(height*height);
   //       tipoPeso === 'lb'
   //         ? twoDecimales((31.0 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(31.0 * (alturaM * alturaM))
-  //     rangoobesity =
+  //     rangoObesidad =
   //       tipoPeso === 'lb'
   //         ? twoDecimales((40.9 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(40.9 * (alturaM * alturaM))
@@ -216,7 +220,7 @@ var imc = weight/(height*height);
   //       tipoPeso === 'lb'
   //         ? twoDecimales((30.0 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(30.0 * (alturaM * alturaM))
-  //     rangoobesity =
+  //     rangoObesidad =
   //       tipoPeso === 'lb'
   //         ? twoDecimales((39.9 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(39.9 * (alturaM * alturaM))
@@ -235,7 +239,7 @@ var imc = weight/(height*height);
   //       tipoPeso === 'lb'
   //         ? twoDecimales((32.0 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(32.0 * (alturaM * alturaM))
-  //     rangoobesity =
+  //     rangoObesidad =
   //       tipoPeso === 'lb'
   //         ? twoDecimales((41.9 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(41.9 * (alturaM * alturaM))
@@ -252,7 +256,7 @@ var imc = weight/(height*height);
   //       tipoPeso === 'lb'
   //         ? twoDecimales((31.0 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(31.0 * (alturaM * alturaM))
-  //     rangoobesity =
+  //     rangoObesidad =
   //       tipoPeso === 'lb'
   //         ? twoDecimales((40.9 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(40.9 * (alturaM * alturaM))
@@ -271,7 +275,7 @@ var imc = weight/(height*height);
   //       tipoPeso === 'lb'
   //         ? twoDecimales((33.0 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(33.0 * (alturaM * alturaM))
-  //     rangoobesity =
+  //     rangoObesidad =
   //       tipoPeso === 'lb'
   //         ? twoDecimales((42.9 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(42.9 * (alturaM * alturaM))
@@ -288,7 +292,7 @@ var imc = weight/(height*height);
   //       tipoPeso === 'lb'
   //         ? twoDecimales((32.0 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(32.0 * (alturaM * alturaM))
-  //     rangoobesity =
+  //     rangoObesidad =
   //       tipoPeso === 'lb'
   //         ? twoDecimales((41.9 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(41.9 * (alturaM * alturaM))
@@ -307,7 +311,7 @@ var imc = weight/(height*height);
   //       tipoPeso === 'lb'
   //         ? twoDecimales((34.0 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(34.0 * (alturaM * alturaM))
-  //     rangoobesity =
+  //     rangoObesidad =
   //       tipoPeso === 'lb'
   //         ? twoDecimales((43.9 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(43.9 * (alturaM * alturaM))
@@ -324,7 +328,7 @@ var imc = weight/(height*height);
   //       tipoPeso === 'lb'
   //         ? twoDecimales((33.0 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(33.0 * (alturaM * alturaM))
-  //     rangoobesity =
+  //     rangoObesidad =
   //       tipoPeso === 'lb'
   //         ? twoDecimales((42.9 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(42.9 * (alturaM * alturaM))
@@ -343,7 +347,7 @@ var imc = weight/(height*height);
   //       tipoPeso === 'lb'
   //         ? twoDecimales((35.0 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(35.0 * (alturaM * alturaM))
-  //     rangoobesity =
+  //     rangoObesidad =
   //       tipoPeso === 'lb'
   //         ? twoDecimales((44.9 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(44.9 * (alturaM * alturaM))
@@ -360,7 +364,7 @@ var imc = weight/(height*height);
   //       tipoPeso === 'lb'
   //         ? twoDecimales((34.0 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(34.0 * (alturaM * alturaM))
-  //     rangoobesity =
+  //     rangoObesidad =
   //       tipoPeso === 'lb'
   //         ? twoDecimales((43.9 * (alturaM * alturaM)) / 0.453592)
   //         : twoDecimales(43.9 * (alturaM * alturaM))
@@ -371,8 +375,8 @@ console.log(rangoPesoIdeal);
     imc: twoDecimales(imc),
     peso: twoDecimales(pesoKg),
     rango: rangoPesoIdeal,
-    rangooverweight,
-    rangoobesity
+    rangoSobrePeso,
+    rangoObesidad
   }
 }
 
