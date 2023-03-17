@@ -49,7 +49,7 @@ const Resultados = ({
         <section className='resultado__grafico'>
           <div className='resultado__linear'>
             <section className={`resultado__indice ${tipo === 'imc' ? clase : 'normal'}`}>
-              <h4>{tipo === 'imc' ? 'YOUR BMI' : 'Peso ideal'}</h4>
+              <h4>{tipo === 'imc' ? 'Your Bmi' : 'Peso ideal'}</h4>
               <p>
                 {tipo === 'imc'
                   ? imc
