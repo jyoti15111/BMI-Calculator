@@ -134,9 +134,9 @@ const PesoIdealPage = (): JSX.Element => {
           const scrollDiv = divGrid.current?.clientHeight ?? 100
           window.scrollTo(0, scrollDiv)
           setResultado({ pesoIdeal: rango, rangoSobrePeso, rangoObesidad })
-          // setResultado({ pesoIdeal: rango,  rangoObesidad })
+          
         } catch (error) {
-          console.log(error)
+         
           setError('error')
         }
       }

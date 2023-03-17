@@ -181,7 +181,7 @@ const IMCPage = (): JSX.Element => {
 
           setResultado({ imc, pesoIdeal: rango, pesoActual: peso, rangoSobrePeso, rangoObesidad })
         } catch (error) {
-          console.log(error)
+         
           setError('error')
         }
       }
@@ -198,32 +198,7 @@ const IMCPage = (): JSX.Element => {
         </p>
 
         <section className='cards-grid'>
-          {/* <Card indice={1} title='¿Cuál es tu género?' error={errores.genero}>
-            <div className='botones'>
-              <button name='hombre' onClick={handleButton}>
-                <PersonaHombreSvg />
-                <span className={`${genero === 'hombre' ? 'btn-azul' : 'btn-ligth'}`}>Hombre</span>
-              </button>
-              <button name='mujer' onClick={handleButton}>
-                <PersonaMujerSvg />
-                <span className={`${genero === 'mujer' ? 'btn-azul' : 'btn-ligth'}`}>Mujer</span>
-              </button>
-            </div>
-          </Card> */}
-
-          {/* <Card indice={2} title='¿Cuántos años tienes?' error={errores.year}>
-            <label htmlFor='year'>
-              <input
-                type='number'
-                name='year'
-                value={campos.year > 0 ? campos.year : ''}
-                onChange={handleChange}
-                id='year'
-                placeholder='21'
-              />
-              <span>Años</span>
-            </label>
-          </Card> */}
+        
 
           <Card indice={1} title='How tall are you?' error={errores.altura}>
             <label htmlFor='altura'>
@@ -245,25 +220,10 @@ const IMCPage = (): JSX.Element => {
                 placeholder={'3 in'}
               />
              
-              {/* <span>{'in'}</span> */}
+             
             </label>
             <span>Height</span>
-            {/* <div className='botones'>
-              <button
-                name='cm'
-                onClick={handleButton}
-                className={`${tipoAltura === 'ft' ? 'btn-azul' : 'btn-ligth'}`}
-              >
-                cm
-              </button>
-              <button
-                name='metro'
-                onClick={handleButton}
-                className={`${tipoAltura === 'metro' ? 'btn-azul' : 'btn-ligth'}`}
-              >
-                metros
-              </button>
-            </div> */}
+          
           </Card>
 
           <Card indice={2} title='How much do you weigh?' error={errores.peso}>
@@ -277,25 +237,10 @@ const IMCPage = (): JSX.Element => {
                 placeholder='12 lbs'
               />
              
-              {/* <span>{tipoPeso}</span> */}
+         
             </label>
             <span>Weight</span>
-            {/* <div className='botones'>
-              <button
-                name='kg'
-                onClick={handleButton}
-                className={`${tipoPeso === 'kg' ? 'btn-azul' : 'btn-ligth'}`}
-              >
-                kg
-              </button>
-              <button
-                name='lb'
-                onClick={handleButton}
-                className={`${tipoPeso === 'lb' ? 'btn-azul' : 'btn-ligth'}`}
-              >
-                lb
-              </button>
-            </div> */}
+            
           </Card>
           
          
