@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronRightSvg, CalculatorSvg, ChatSvg } from '../../assets/svg'
-import imgLogo from '../../assets/img/logo.png'
+
 import '../../styles/Header.css'
 
 const Header = (): JSX.Element => {
@@ -21,9 +21,7 @@ const Header = (): JSX.Element => {
   return (
     <header className='header'>
       <section className='header__container container'>
-        <Link to='/' className='header__logo' title='Inicio'>
-          <img src={imgLogo} width={50} height={50} />
-        </Link>
+
 
         <button
           className={`header__menubar ${isMenuOpen ? 'active' : ''}`}
