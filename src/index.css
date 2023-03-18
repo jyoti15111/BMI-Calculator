@@ -363,8 +363,14 @@ img {
   .cards-grid,
   .cards-grid-3 {
     grid-template-columns: 1fr;
-    width: 241px;
+   
+    margin: auto;
   }
+  button.btn-pink.uppercase.btn-center.btn-calcular {
+    width: 73%;
+    /* margin: 10px; */
+    margin-top: 10px; 
+}
 }
 @media (prefers-color-scheme: dark) {
   html {
