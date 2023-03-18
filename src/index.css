@@ -363,6 +363,7 @@ img {
   .cards-grid,
   .cards-grid-3 {
     grid-template-columns: 1fr;
+    width: 241px;
   }
 }
 @media (prefers-color-scheme: dark) {
