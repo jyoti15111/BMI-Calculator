@@ -20,7 +20,7 @@
   margin-bottom: 40px;
 }
 .resultado__grafico {
-  overflow: auto;
+  /* overflow: auto; */
   padding-bottom: 50px;
   max-width: fit-content;
   margin-left: auto;
@@ -69,11 +69,11 @@
   background: var(--c-naranja);
 }
 .resultado__indice.obesity {
-  background: var(--c-brown);
+  background: var(--c-purple);
   left: 760px;
 }
 .resultado__indice.obesity span {
-  background: var(--c-brown);
+  background: var(--c-purple);
 }
 .resultado__indice.obesity-morbida {
   background: var(--c-rojo);
@@ -113,16 +113,16 @@
   border-bottom: 10px solid var(--c-amarillo);
 }
 .resultado__linear div:nth-last-child(4) {
-  border-bottom: 10px solid var(--c-verde);
-}
-.resultado__linear div:nth-last-child(3) {
   border-bottom: 10px solid var(--c-naranja);
 }
+.resultado__linear div:nth-last-child(3) {
+  border-bottom: 10px solid var(--c-verde);
+}
 .resultado__linear div:nth-last-child(2) {
-  border-bottom: 10px solid var(--c-brown);
+  border-bottom: 10px solid var(--c-naranja);
 }
 .resultado__linear div:nth-last-child(1) {
-  border-bottom: 10px solid var(--c-rojo);
+  border-bottom: 10px solid var(--c-purple);
 }
 .resultado__linear div h3 {
   font-size: 18px;
