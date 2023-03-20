@@ -33,7 +33,7 @@ const Resultados = ({
         setClase('normal')
       } else if (imc > 24.0 && imc < 29.0) {
         setClase('sobre-peso')
-      } else if (imc > 29.0) {
+      } else if (imc > 29.0 && imc < 39.0) {
         setClase('obesity')
       } 
       // else if (imc > 39.0) {
@@ -94,12 +94,21 @@ const Resultados = ({
               <p>
                 <span>29.0</span>
                 <span className='resultado__dotted'></span>
+                <span>+</span>
               </p>
-              <span className='resultado-bottom'>
+              {/* <span className='resultado-bottom'>
                 {rangoObesidad} {tipoPeso}
-              </span>
+              </span> */}
+              {/* <span>+</span> */}
             </div>
-            
+            {/* <div>
+              <h4>extreme obesity</h4>
+              <p>
+                <span>39.0</span>
+                <span className='resultado__dotted'></span>
+                <span>+</span>
+              </p>
+            </div> */}
           </div>
         </section>
 
