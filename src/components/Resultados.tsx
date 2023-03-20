@@ -33,7 +33,7 @@ const Resultados = ({
         setClase('normal')
       } else if (imc > 24.0 && imc < 29.0) {
         setClase('sobre-peso')
-      } else if (imc > 29.0 && imc < 39.0) {
+      } else if (imc > 29.0) {
         setClase('obesity')
       } 
       // else if (imc > 39.0) {
